@@ -1,5 +1,5 @@
 """
-WSGI config for sirimongkol_web project.
+WSGI config for patiphat_webside project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,7 +11,7 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'sirimongkol_web.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'patiphat_webside.settings')
 
 application = get_wsgi_application()
 

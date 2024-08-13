@@ -2,7 +2,7 @@
     "version": 2,
     "builds": [
       {
-        "src": "sirimongkol_web/wsgi.py",
+        "src": "patiphat_webside/wsgi.py",
         "use": "@vercel/python"
       },
       {
@@ -20,7 +20,7 @@
       },
       {
         "src": "/(.*)",
-        "dest": "sirimongkol_web/wsgi.py"
+        "dest": "patiphat_webside/wsgi.py"
       }
     ]
   }
