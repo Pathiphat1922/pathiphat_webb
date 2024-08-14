@@ -1,18 +1,18 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render
 
 # Create your views here.
 
 
 def indexPage(request):
-    return render(request, 'index.html')
+    return render(request, "index.html")
 
 
-def aboutUs(request):
-    return render(request, 'about.html')
+def aboutPage(request):
+    return render(request, "about.html")
 
 
-def contactUs(request):
-    return render(request, 'contact.html')
+def contactPage(request):
+    return render(request, "contact.html")
 
 
 def forPage(request):
@@ -24,10 +24,14 @@ def forPage(request):
 
 
 def cardPage(request):
-    return render(request, 'card_template.html', {'range': range(100)})
+    context = {}
+    lt = list(range(0, 100))
+    context["list"] = lt
+
+    return render(request, 'card_template.html', context)
 
 
-def cardColorUs(request):
+def cardColorPage(request):
     context = {
         'color': 'all',
     }
@@ -36,3 +40,19 @@ def cardColorUs(request):
         context['color'] = request.GET.get('color')
 
     return render(request, 'card_color.html', context)
+
+
+def formPage(request):
+    email = ''
+    password = ''
+
+    context = {}
+
+    if request.method == "POST":
+        email = request.POST.get('email')
+        password = request.POST.get('my-password')
+
+    context['email'] = email
+    context['password'] = password
+
+    return render(request, 'form.html', context)
